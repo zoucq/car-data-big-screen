@@ -47,7 +47,7 @@ export default {
 
   .scale_box{
     background: url('~assets/img/map_bg.png') repeat-y center;
-    background-size: 100% 100%;
+    /*background-size: 100% 100%;*/
     opacity: 0;
   }
   .on{
