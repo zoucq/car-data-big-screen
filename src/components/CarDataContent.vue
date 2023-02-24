@@ -21,7 +21,7 @@
                 </div>
                 <div class="info-text fl">
                   <p>车辆总数(辆)</p>
-                  <p>12,457</p>
+                  <p>32,456</p>
                 </div>
               </div>
               <div class="info-2">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="info-text fl">
                   <p>当前在线数(辆)</p>
-                  <p>12,457</p>
+                  <p>12,153</p>
                 </div>
               </div>
               <div class="info-3">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="info-text fl">
                   <p>今日活跃数(辆)</p>
-                  <p>12,457</p>
+                  <p>10,457</p>
                 </div>
               </div>
               <div class="info-4">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="info-text fl">
                   <p>今日活跃率(%)</p>
-                  <p>83</p>
+                  <p>86</p>
                 </div>
               </div>
             </div>
@@ -75,13 +75,13 @@
         <div class="map-num">
           <p>实时行驶车辆(辆)</p>
           <div class="num">
-            <span>1</span>
+            <span>8</span>
             <span>,</span>
-            <span>2</span>
-            <span>3</span>
             <span>4</span>
-            <span>,</span>
             <span>5</span>
+            <span>2</span>
+            <span>,</span>
+            <span>3</span>
             <span>6</span>
             <span>7</span>
           </div>
