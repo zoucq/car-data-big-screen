@@ -10,7 +10,8 @@ const cdn = {
   css: [],
   js: [
     'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
-    'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js'
+    // 'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js',
+    'https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.min.js'
   ]
 }
 
