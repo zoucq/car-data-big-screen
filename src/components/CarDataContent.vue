@@ -1276,7 +1276,7 @@ export default {
 .c{
     font-style: normal;
     position: absolute;
-    top: 2px;
+    top: 0px;
     left: 50%;
     transform: translate(-50%);
     transition: transform 1s ease-in-out;
