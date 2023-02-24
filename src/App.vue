@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <ScaleBox>
-      <CarComponent></CarComponent>
+  <div id="app" :class="{loading: !show}">
+    <ScaleBox :class="{scale_box: true, on: show}">
+      <CarComponent @ready="ready"></CarComponent>
     </ScaleBox>
   </div>
 </template>
@@ -15,18 +15,42 @@ export default {
   components: {
     ScaleBox,
     CarComponent
+  },
+  data(){
+    return {
+      show: false
+    }
+  },
+  methods: {
+    ready () {
+      this.show = true
+    }
   }
 }
 </script>
 
 <style lang="css">
   @import "~assets/css/common.css";
+
   #app{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background-color: #000;
     /*background: url("https://mpi.yunjiahealth.com:9443/testdapingweb/img/i-bg.60eca4b0.png") no-repeat left top;*/
+  }
+
+  .loading{
+    background: rgba(0,0,0,1) url('~assets/img/loading.svg') no-repeat center;
+    background-size: 48px;
+  }
+
+  .scale_box{
     background: url('~assets/img/map_bg.png') repeat-y center;
-    /*background-size: 100% 100%;*/
+    background-size: 100% 100%;
+    opacity: 0;
+  }
+  .on{
+    opacity: 1;
   }
 </style>

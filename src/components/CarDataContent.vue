@@ -1228,6 +1228,7 @@ export default {
     return {}
   },
   mounted() {
+    this.$emit('ready')
     echarts_1();
     echarts_2();
     map();
