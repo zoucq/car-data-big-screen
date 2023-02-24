@@ -49,6 +49,7 @@ export default {
     /*background: url("https://sugar.aipage.com/static/img-templet/background-2.png") repeat-y center;*/
 
     background: url('~assets/img/map_bg.png') repeat-y center;
+    background-size: cover;
     /*background-size: 100% 100%;*/
     opacity: 0;
   }
