@@ -40,7 +40,7 @@ jobs:
       - name: Build
         if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
         env:
-          BUILD_DIR: public
+          BUILD_DIR: dist
         run: |
           yarn build # 打包应用
 
