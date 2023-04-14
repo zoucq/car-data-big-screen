@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '16.x'
 
       - name: Install Dependencies
         if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
