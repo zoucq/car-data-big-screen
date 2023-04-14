@@ -42,7 +42,7 @@ jobs:
         env:
           BUILD_DIR: public
         run: |
-          npm run build # 打包应用
+          yarn build # 打包应用
 
       - name: Deploy
         if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
