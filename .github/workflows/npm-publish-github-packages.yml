@@ -45,9 +45,15 @@ jobs:
           yarn build # 打包应用
 
       - name: Deploy
-        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: ${{ env.BUILD_DIR }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
+          env:
+            BUILD_DIR: dist
+          run: |
+            npm run build # 打包应用
+            cd $BUILD_DIR # 进入打包目录
+            git init
+            git config user.name "zoucq"
+            git config user.email "1769301150@qq.com"
+            git add .
+            git commit -m "Deploy to GitHub Pages"
+            git push --force "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" master:gh-pages # 推送到GitHub Pages分支
