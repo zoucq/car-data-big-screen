@@ -37,19 +37,12 @@ jobs:
         run: |
           yarn # 安装依赖
 
-      - name: Build
-        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
-        env:
-          BUILD_DIR: dist
-        run: |
-          yarn build # 打包应用
-
-      - name: Deploy
+      - name: Build and Deploy
           if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
           env:
             BUILD_DIR: dist
           run: |
-            npm run build # 打包应用
+            yarn build # 打包应用
             cd $BUILD_DIR # 进入打包目录
             git init
             git config user.name "zoucq"
