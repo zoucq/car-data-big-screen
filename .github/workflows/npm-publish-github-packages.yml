@@ -41,14 +41,17 @@ jobs:
         if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
         env:
           BUILD_DIR: dist
+          GITHUB_TOKEN: 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
         run: |
           yarn build # 打包应用
 
       - name: Deploy # 部署
+        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages # 部署后提交到那个分支
           folder: dist # 这里填打包好的目录名称
+          token: ${{ GITHUB_TOKEN }}
 
 #          cd $BUILD_DIR # 进入打包目录
 #          git init
