@@ -43,7 +43,7 @@ jobs:
             BUILD_DIR: dist
           run: |
             yarn build # 打包应用
-            cd $BUILD_DIR # 进入打包目录
+            cd dist # 进入打包目录
             git init
             git config user.name "zoucq"
             git config user.email "1769301150@qq.com"
