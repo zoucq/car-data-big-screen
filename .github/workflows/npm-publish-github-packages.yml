@@ -40,7 +40,6 @@ jobs:
       - name: Build and package
         run: |
           yarn build
-          mkdir dist && cp -r build/* dist/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.2
