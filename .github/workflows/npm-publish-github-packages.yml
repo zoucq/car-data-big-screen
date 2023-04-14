@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Get latest tag
         id: get_latest_tag
@@ -28,14 +28,14 @@ jobs:
           fi
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
 
       - name: Install Dependencies
         if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
         run: |
-          npm ci # 安装依赖
+          yarn # 安装依赖
 
       - name: Build
         if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
