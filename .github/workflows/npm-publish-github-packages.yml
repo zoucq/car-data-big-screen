@@ -48,11 +48,11 @@ jobs:
 #          folder: dist
 
       - name: Deploy to GitHub Pages
-          uses: peaceiris/actions-gh-pages@v4
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./dist/
-            publish_branch: gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/
+          publish_branch: gh-pages
 
 #      - name: Build and Deploy
 #        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
