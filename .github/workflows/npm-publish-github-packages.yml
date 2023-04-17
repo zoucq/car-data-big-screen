@@ -41,11 +41,18 @@ jobs:
         run: |
           yarn build
 
+#      - name: Deploy to GitHub Pages
+#        uses: JamesIves/github-pages-deploy-action@4.1.2
+#        with:
+#          branch: gh-pages
+#          folder: dist
+
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.2
-        with:
-          branch: gh-pages
-          folder: dist
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./dist/
+            publish_branch: gh-pages
 
 #      - name: Build and Deploy
 #        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
