@@ -7,6 +7,9 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
 
@@ -54,12 +57,10 @@ jobs:
 #          target_branch: gh-pages
 #          token: ${{ secrets.PAT }}
 
-      - name: Deploy to GitHub Pages # 部署到 GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.2
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-          BRANCH: gh-pages # 将构建好的代码部署到 gh-pages 分支
-          FOLDER: dist # 将构建后的代码放在项目根目录的 build 文件夹中
+          folder: dist # The folder the action should deploy.
 
 #      - name: Build and Deploy
 #        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
