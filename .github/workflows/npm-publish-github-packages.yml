@@ -48,9 +48,9 @@ jobs:
 #          folder: dist
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3.9.0
+        uses: crazy-max/ghaction-github-pages@v4.1.1
         with:
-          build_dir: public
+          build_dir: dist
           target_branch: gh-pages
           token: ${{ secrets.PAT }}
 
