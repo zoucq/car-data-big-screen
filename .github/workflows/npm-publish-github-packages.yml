@@ -44,44 +44,7 @@ jobs:
         run: |
           yarn build
 
-#      - name: Deploy to GitHub Pages
-#        uses: JamesIves/github-pages-deploy-action@4.1.2
-#        with:
-#          branch: gh-pages
-#          folder: dist
-
-#      - name: Deploy to GitHub Pages
-#        uses: crazy-max/ghaction-github-pages@v4.1.1
-#        with:
-#          build_dir: dist
-#          target_branch: gh-pages
-#          token: ${{ secrets.PAT }}
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist # The folder the action should deploy.
-
-#      - name: Build and Deploy
-#        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
-#        env:
-#          BUILD_DIR: dist
-#          GITHUB_TOKEN: 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
-#        run: |
-#          yarn build # 打包应用
-
-#      - name: Deploy # 部署
-#        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
-#        uses: JamesIves/github-pages-deploy-action@v4.3.3
-#        with:
-#          branch: gh-pages # 部署后提交到那个分支
-#          folder: dist # 这里填打包好的目录名称
-#          token: ${{ env.GITHUB_TOKEN }}
-
-#          cd $BUILD_DIR # 进入打包目录
-#          git init
-#          git config user.name "zoucq"
-#          git config user.email "1769301150@qq.com"
-#          git add .
-#          git commit -m "Deploy to GitHub Pages"
-#          git push --force "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" master:gh-pages # 推送到GitHub Pages分支
