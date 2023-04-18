@@ -47,12 +47,12 @@ jobs:
 #          branch: gh-pages
 #          folder: dist
 
-      - name: Deploy to GitHub Pages # 部署到 GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.2
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v3.9.0
         with:
-          GITHUB_TOKEN: ${{ secrets.TK }}
-          BRANCH: gh-pages # 将构建好的代码部署到 gh-pages 分支
-          FOLDER: ./dist # 将构建后的代码放在项目根目录的 build 文件夹中
+          build_dir: public
+          target_branch: gh-pages
+          token: ${{ secrets.PAT }}
 
 #      - name: Build and Deploy
 #        if: ${{ steps.tag_compare.outputs.newer_tag == 'true' }}
